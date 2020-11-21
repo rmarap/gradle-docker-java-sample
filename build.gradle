@@ -1,4 +1,3 @@
-import org.apache.commons.io.*
 
 plugins {
     id 'java'
