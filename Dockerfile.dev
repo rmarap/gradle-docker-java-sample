@@ -12,10 +12,6 @@ RUN mkdir /app
 #COPY --from=build /home/gradle/src/build/libs/*.jar /app/
 RUN cp -r /home/gradle/src/build/install/gradle-docker-sample /app/
 WORKDIR /app/gradle-docker-sample
-ENV CLASSPATH ./lib/*.jar
 
-#COPY /home/gradle/src/build/libs/*.jar /app/
-#COPY ./credentials/google-drive /app/PhotoChef-1.0/bin/credentials/google-drive
-#COPY ./credentials/google-photos /app/PhotoChef-1.0/bin/credentials/google-photos
 
-#ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
+ENTRYPOINT ["java", "-jar", "gradle-docker-sample-0.1.jar"]
